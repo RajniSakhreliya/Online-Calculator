@@ -1,0 +1,84 @@
+@use "./breakpoints" as *;
+@use "./mixin" as *;
+@use "./color" as *;
+@use "./font-size" as *;
+
+.breadcrumb__wrapper {
+  overflow: hidden;
+  padding-inline: 32px;
+  font-size: 12px;
+  max-height: 58px;
+  color: $breadcrumbs-font-color;
+  max-width: 1280px;
+  width: 100%;
+  margin: 10px auto;
+
+  .Breadcrumb {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    background-color: $breadcrumbs-color;
+
+    .page-title {
+      .title {
+        color: $white;
+        text-align: center;
+        text-transform: uppercase;
+
+        @media #{$large-device} {
+          //   font-size: inherit;
+        }
+      }
+    }
+
+    .BreadSpace {
+      padding: 0 10px;
+    }
+
+    .breadcrumb__inner {
+      .breadcrumb {
+        display: flex;
+        flex-direction: row;
+        padding: 10px 0;
+        background-color: transparent;
+        margin-bottom: 0;
+
+        @media #{$large-device} {
+          padding: 7px 0;
+        }
+
+        .parent__link {
+          a {
+            color: $breadcrumbs-font-color;
+            position: relative;
+            display: block;
+            text-decoration: none;
+
+            @media #{$large-device} {
+              // font-size: inherit;
+            }
+
+            &:hover {
+              color: $themecolor;
+
+              &::before {
+                left: 0;
+                width: 100%;
+              }
+            }
+          }
+        }
+
+        .current {
+          color: $breadcrumbs-font-color;
+          display: flex;
+
+          @media #{$large-device} {
+            // font-size: inherit;
+          }
+        }
+      }
+    }
+  }
+}

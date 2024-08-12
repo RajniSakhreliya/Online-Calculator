@@ -1,0 +1,96 @@
+@use "../common/mixin" as *;
+@use "../common/breakpoints" as *;
+@use "../common/color" as *;
+@use "../common/font-size" as *;
+
+.home-page {
+    @include flex-column;
+    height: 100%;
+    padding-inline: 32px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+
+    .cal-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 100%;
+        justify-items: center;
+
+        .cal-container {
+            width: 90%;
+            height: auto;
+            max-width: 240px;
+            min-height: 240px;
+            border: 1px solid var(--gray150);
+            border-radius: 8px;
+            color: var(--gray900);
+            overflow: hidden;
+            padding: 15px;
+            margin: 10px;
+            position: relative;
+
+            .BackgroundImage {
+                bottom: -5px;
+                height: 80px;
+                opacity: .4;
+                position: absolute;
+                right: -5px;
+                transition: opacity .3s ease;
+                width: 80px;
+                z-index: 1;
+            }
+
+            .Heading {
+                margin: 0;
+            }
+
+            .headingLarge {
+                font-size: var(--font-size-18);
+                line-height: 2rem;
+                font-weight: var(--font-weight-bold);
+            }
+
+            .Description {
+                margin-top: 12px;
+            }
+
+            .bodyBase,
+            .bodyBaseHeavy {
+                font-weight: var(--font-weight-regular);
+                font-size: var(--font-size-12);
+                line-height: 1.25rem;
+            }
+        }
+
+        .cal-container:hover .BackgroundImage {
+            opacity: 1;
+        }
+
+        .cal-container:hover {
+            background-color: $hover-container-color;
+        }
+    }
+
+    @media (max-width: 1200px) {
+        .cal-list {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media (max-width: 800px) {
+        padding-inline: 12px;
+
+        .cal-list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 350px) {
+        .cal-list {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}

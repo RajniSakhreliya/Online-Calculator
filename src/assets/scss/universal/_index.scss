@@ -1,0 +1,21 @@
+//common
+@forward "../common/color";
+@forward "../common/font-size";
+@forward "../common/breakpoints";
+@forward "../common/common";
+@forward "../common/element";
+@forward "../common/mixin";
+@forward "../common/breadcrumb";
+@forward "../common/loader";
+@forward "../partial/title";
+
+//partial
+@forward "../partial/title";
+@forward "../partial/app";
+@forward "../partial/header";
+@forward "../partial/footer";
+
+// pages
+@forward "../pages/404";
+@forward "../pages/home";
+@forward "../pages/pagecalculator";
