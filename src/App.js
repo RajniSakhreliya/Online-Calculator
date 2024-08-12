@@ -14,7 +14,6 @@ import "./assets/css/vendor/animate.css";
 import "./assets/scss/style.scss";
 import config from "./utils/config";
 import 'bootstrap/dist/css/bootstrap.css';
-import { TweenMax } from "gsap";
 
 
 // Maintenance Mode
